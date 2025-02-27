@@ -1,0 +1,302 @@
+/* General Styles */
+body {
+    font-family: 'Dancing Script', cursive, Arial, sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+ }
+
+/* Transparent Container */
+#main-container {
+    background: rgba(255, 255, 255, 0.1); /* Transparent effect */
+    backdrop-filter: blur(10px); /* Blurred background */
+    border-radius: 20px;
+    padding: 30px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0px 0px 20px rgba(255, 150, 200, 0.8); /* Soft pink glow */
+    animation: glowAnimation 2s infinite alternate;
+}
+
+/* Glow Effect Animation */
+@keyframes glowAnimation {
+    0% { box-shadow: 0px 0px 20px rgba(255, 150, 200, 0.5); }
+    100% { box-shadow: 0px 0px 30px rgba(255, 100, 200, 1); }
+}
+
+
+/* Countdown Timer */
+#countdown {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    animation: bounce 1s infinite alternate;
+}
+
+/* Birthday Content */
+.hidden {
+    display: none;
+}
+
+/* Messages */
+.message {
+    font-size: 1.8rem;
+    margin: 15px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease-in-out;
+    background: #f4879b;
+    padding: 15px 25px;
+    border-radius: 15px;
+    display: inline-block;
+    color: #2e0505;
+}
+
+/* Photo Gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.gallery img {
+    width: 80%;
+    max-width: 250px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+/* Love Notes */
+.note {
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    background: #ff85a1;
+    padding: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 100px;
+}
+
+/* Gift Box */
+.gift-box {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+    animation: shake 0.5s infinite alternate;
+}
+
+.gift-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* When the gift is opened */
+.opened {
+    animation: none;
+    transform: scale(1.2);
+}
+
+/* Improved Shake Animation */
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
+}
+
+/* Confetti Particles */
+.confetti {
+    position: absolute;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    background-color: var(--confetti-color, #ff5722);
+    border-radius: 50%;
+    animation: confettiAnimation 3s ease-out forwards;
+}
+
+/* Confetti Animation */
+@keyframes confettiAnimation {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Fireworks Explosion */
+.fireworks {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(255, 0, 0, 0.7));
+    animation: explode 1.5s ease-out forwards;
+    pointer-events: none;
+}
+
+/* Fireworks Animation */
+@keyframes explode {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(5); opacity: 0.8; }
+    100% { transform: scale(10); opacity: 0; }
+}
+
+#sweetMessages h2{
+    font-size: 2.2rem;
+}
+/* Secret Love Message */
+#secret-message {
+    font-size: 1.6rem;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #e94788;
+    transition: all 0.5s;
+}
+
+#secret-message:hover {
+    background: #ff3385;
+    transform: scale(1.1);
+}
+
+/* Floating Hearts */
+@keyframes floating {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+.heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    animation: floating 5s linear infinite;
+    color: #ff4d6d;
+}
+/* Lightbox Background */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.5s;
+}
+
+/* Lightbox Image */
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.lightbox img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Close Button */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.lightbox-close:hover {
+    color: #ff758c;
+}
+#photoGallery, #giftUnboxing,#photoGallery2 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease-in-out;
+}
+.birthday-message {
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.content {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+@keyframes twinkling {
+    0% { opacity: 0; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.2); }
+}
+
+.star {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkling 3s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+    .message {
+        font-size: 1.2rem;
+    }
+    .gallery img {
+        width: 90%;
+    }
+    .note {
+        width: 180px;
+        height: 90px;
+        font-size: 1.3rem;
+        line-height: 90px;
+    }
+    .gift-box {
+        width: 120px;
+        height: 120px;
+    }
+}
