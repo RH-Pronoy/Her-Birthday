@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const countdownDate = new Date("Feb 27, 2025 19:52:00").getTime();
+    const countdownDate = new Date("Feb 27, 2025 20:00:00").getTime();
     const countdownDiv = document.getElementById("countdown");
     const birthdayContent = document.getElementById("birthday-content");
     const countdownContainer = document.getElementById("countdown-container");
